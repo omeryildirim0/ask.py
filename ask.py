@@ -1,5 +1,6 @@
 import json
 import logging
+from dotenv import load_dotenv
 import os
 import urllib.parse
 from typing import Any, Dict, List, Optional
@@ -24,6 +25,7 @@ def get_logger(log_level: str) -> logging.Logger:
 class Ask:
 
     def __init__(self, logger: Optional[logging.Logger] = None):
+        load_dotenv()
         self.read_env_variables()
 
         if logger is not None:
